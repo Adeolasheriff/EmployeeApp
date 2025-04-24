@@ -88,7 +88,7 @@ namespace EmployeeAdminPortal.Controllers
                 {
                     message = "user verified successfully",
 
-                    
+
                 });
             }
 
@@ -114,7 +114,7 @@ namespace EmployeeAdminPortal.Controllers
                 {
                     return NotFound("user not found in the database");
                 }
-                if(!findEmployee.IsVerified)
+                if (!findEmployee.IsVerified)
                 {
                     return Unauthorized("user not verified");
 
@@ -210,7 +210,7 @@ namespace EmployeeAdminPortal.Controllers
                 if (!string.IsNullOrWhiteSpace(update.Password))
                 {
 
-                 
+
                     var hashed = _passwordHasher.HashPassword(employee, update.Password);
                     employee.Password = hashed;
                 }
